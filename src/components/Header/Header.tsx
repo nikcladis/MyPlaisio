@@ -9,7 +9,7 @@ const Header: React.FC = () => {
   return (
     <header>
       <Navigation isLargeScreen={isLargeScreen} />
-      {isLargeScreen && <Search />}
+      {!isLargeScreen && <Search />}
     </header>
   );
 };
