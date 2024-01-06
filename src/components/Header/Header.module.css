@@ -1,5 +1,17 @@
-.headerContainer {
-  color: white;
-  background-color: dodgerblue;
+.header {
+  color: black;
+  background-color: white;
   padding: 10px;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav_group {
+  display: flex;
+  align-items: center;
+  gap: 15px;
 }
