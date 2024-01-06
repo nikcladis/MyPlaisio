@@ -1,0 +1,24 @@
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav_group {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.nav_icon {
+  cursor: pointer;
+  transition: color 300ms ease;
+}
+
+.nav_icon:hover {
+  color: purple;
+}
+
+.nav_text {
+  font-size: 20px;
+}
