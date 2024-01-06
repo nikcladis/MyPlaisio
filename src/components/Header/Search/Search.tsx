@@ -1,8 +1,11 @@
 import React from "react";
 
-type SearchProps = {};
-
-const Search: React.FC<SearchProps> = () => {
-  return <div>Search</div>;
+type SearchProps = {
+  className?: string;
 };
+
+const Search: React.FC<SearchProps> = ({ className }) => {
+  return <div className={className}>Search</div>;
+};
+
 export default Search;

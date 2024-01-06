@@ -5,15 +5,29 @@ import Logo from "../../../Logo/Logo";
 
 const MobileNav: React.FC = () => {
   return (
-    <nav>
-      <div>
-        <GrMenu fontSize={30} />
-        <GrPhone fontSize={25} />
+    <nav className="flex p-4 justify-between items-center gap-6">
+      <div className="flex self-start items-center gap-4">
+        <GrMenu
+          fontSize={30}
+          className="cursor-pointer hover:text-purple-600 transition-color duration-300 ease"
+        />
+        <GrPhone
+          fontSize={25}
+          className="cursor-pointer hover:text-purple-600 transition-color duration-300 ease"
+        />
       </div>
-      <Logo width={130} />
-      <div>
-        <FaRegCircleUser fontSize={25} />
-        <GrCart fontSize={25} />
+      <div className="self-center">
+        <Logo width={130} />
+      </div>
+      <div className="flex self-end items-center gap-4">
+        <FaRegCircleUser
+          fontSize={25}
+          className="cursor-pointer hover:text-purple-600 transition-color duration-300 ease"
+        />
+        <GrCart
+          fontSize={25}
+          className="cursor-pointer hover:text-purple-600 transition-color duration-300 ease"
+        />
       </div>
     </nav>
   );
