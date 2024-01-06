@@ -1,3 +1,4 @@
+import React from "react";
 import Home from "./pages/Home/Home";
 import RootLayout from "./layouts/RootLayout/RootLayout";
 import Products from "./pages/Products/Products";

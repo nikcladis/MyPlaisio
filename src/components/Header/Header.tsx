@@ -9,7 +9,7 @@ const Header: React.FC = () => {
 
   return (
     <header className={styles.header}>
-      <Navigation isLargeScreen />
+      <Navigation isLargeScreen={isLargeScreen} />
       {!isLargeScreen && <Search />}
     </header>
   );
