@@ -13,7 +13,7 @@ const Slider: React.FC = () => {
     useSlider(slides);
 
   return (
-    <div ref={sliderRef} className="p-4 w-full relative group overflow-hidden">
+    <div ref={sliderRef} className="p-4 w-full group overflow-hidden">
       {slides.map((slide, slideIndex) => (
         <img
           key={slideIndex}

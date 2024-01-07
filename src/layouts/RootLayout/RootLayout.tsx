@@ -9,8 +9,8 @@ const RootLayout: React.FC = () => {
     <div className="relative">
       <Header />
       <main className="flex min-h-screen">
-        <Sidebar />
         <Outlet />
+        <Sidebar />
       </main>
       <Footer />
     </div>

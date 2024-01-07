@@ -14,7 +14,7 @@ const Sidebar: React.FC = () => {
   return (
     <>
       <Overlay />
-      <aside className="fixed top-0 h-screen flex flex-col bg-white px-4 overflow-y-auto">
+      <aside className="fixed z-1 top-0 h-screen flex flex-col bg-white px-4 overflow-y-auto">
         <SidebarHeader />
         <CategoryList />
         <SidebarFooter />
