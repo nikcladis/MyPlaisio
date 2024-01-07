@@ -10,7 +10,7 @@ const RootLayout: React.FC = () => {
   return (
     <div className="relative">
       <Header />
-      <main className="flex bg-red-500">
+      <main className="flex min-h-screen">
         <Sidebar isOpen={isOpen} />
         <Outlet />
       </main>
