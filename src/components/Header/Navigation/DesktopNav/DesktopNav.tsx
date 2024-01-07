@@ -4,8 +4,12 @@ import { FaRegCircleUser } from "react-icons/fa6";
 import { FaRegHeart } from "react-icons/fa";
 import Logo from "../../../Logo/Logo";
 import Search from "../../Search/Search";
+import { useSetRecoilState } from "recoil";
+import { sidebarState } from "../../../../atoms/sidebarState";
 
 const DesktopNav: React.FC = () => {
+  const setSidebarState = useSetRecoilState(sidebarState);
+
   return (
     <>
       <nav className="bg-white flex p-4 justify-between items-center w-full">
@@ -14,7 +18,12 @@ const DesktopNav: React.FC = () => {
             <Logo width={220} />
           </div>
           <div className="flex items-center gap-3 mt-2">
-            <GrMenu fontSize={30} />
+            <GrMenu
+              onClick={() =>
+                setSidebarState((prev) => ({ ...prev, isOpen: true }))
+              }
+              fontSize={30}
+            />
             <span className="font-semibold">Προϊόντα</span>
           </div>
         </div>
