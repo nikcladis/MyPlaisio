@@ -2,12 +2,12 @@ import React from "react";
 import Overlay from "./Overlay/Overlay";
 import SidebarHeader from "./SidebarHeader/SidebarHeader";
 import CategoryList from "./CategoryList/CategoryList";
+import { useRecoilValue } from "recoil";
+import { sidebarState } from "../../atoms/sidebarState";
 
-type SidebarProps = {
-  isOpen: boolean;
-};
+const Sidebar: React.FC = () => {
+  const { isOpen } = useRecoilValue(sidebarState);
 
-const Sidebar: React.FC<SidebarProps> = ({ isOpen }) => {
   if (!isOpen) return null;
 
   return (
