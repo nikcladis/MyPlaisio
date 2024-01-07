@@ -5,7 +5,7 @@ import Logo from "../../../Logo/Logo";
 
 const MobileNav: React.FC = () => {
   return (
-    <nav className="flex p-4 justify-between items-center gap-6">
+    <nav className="flex p-4 bg-white justify-between items-center gap-6">
       <div className="flex self-start items-center gap-4">
         <GrMenu
           fontSize={30}

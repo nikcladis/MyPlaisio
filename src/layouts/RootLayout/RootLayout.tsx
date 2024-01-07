@@ -1,15 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
 import Header from "../../components/Header/Header";
 import Footer from "../../components//Footer/Footer";
 import { Outlet } from "react-router-dom";
+import Sidebar from "../../components/Sidebar/Sidebar";
 
 const RootLayout: React.FC = () => {
+  const [isOpen, setIsOpen] = useState(true);
+
   return (
-    <>
+    <div className="relative">
       <Header />
-      <Outlet />
+      <main className="flex bg-red-500">
+        <Sidebar isOpen={isOpen} />
+        <Outlet />
+      </main>
       <Footer />
-    </>
+    </div>
   );
 };
 export default RootLayout;
