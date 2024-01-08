@@ -10,7 +10,7 @@ const Header: React.FC = () => {
   return (
     <>
       {isLargeScreen && <Topbar />}
-      <header className="sticky top-0">
+      <header className="sticky top-0 z-10">
         <Navigation isLargeScreen={isLargeScreen} />
         {!isLargeScreen && <Search />}
       </header>

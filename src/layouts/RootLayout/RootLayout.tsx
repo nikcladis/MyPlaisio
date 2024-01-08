@@ -6,11 +6,11 @@ import Sidebar from "../../components/Sidebar/Sidebar";
 
 const RootLayout: React.FC = () => {
   return (
-    <div className="relative">
+    <div className="overflow-hidden">
       <Header />
       <main className="flex min-h-screen">
-        <Sidebar />
         <Outlet />
+        <Sidebar />
       </main>
       <Footer />
     </div>
