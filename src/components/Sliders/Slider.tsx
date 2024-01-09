@@ -15,7 +15,7 @@ const Slider: React.FC = () => {
   return (
     <div
       ref={sliderRef}
-      className="p-4 w-fit h-fit relative group overflow-hidden"
+      className="p-4 z-0 w-fit h-fit relative group overflow-hidden"
     >
       {slides.map((slide, slideIndex) => (
         <img
