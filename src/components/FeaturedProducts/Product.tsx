@@ -1,16 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { FaCheck } from "react-icons/fa";
-import { useSetRecoilState } from "recoil";
-import { useRecoilValue } from "recoil";
+import { useRecoilState, useSetRecoilState } from "recoil";
 import { productsState } from "../../atoms/productsState";
-
-type ProductProps = {
-  id: number;
-  src: string;
-  title: string;
-  price: number;
-  inCart: boolean;
-};
+import { cartState } from "../../atoms/cartState";
 
 type Product = {
   id: number;
@@ -20,12 +12,12 @@ type Product = {
   inCart: boolean;
 };
 
-const Product: React.FC<ProductProps> = ({ id, src, title, price, inCart }) => {
+const Product: React.FC<Product> = ({ id, src, title, price, inCart }) => {
   const [isHovered, setIsHovered] = useState(false);
   const [isVisible, setIsVisible] = useState(!inCart);
   const [isClicked, setIsClicked] = useState(false);
-  const setProducts = useSetRecoilState(productsState);
-  const products: Product[] = useRecoilValue(productsState);
+  const [products, setProducts] = useRecoilState(productsState);
+  const setCart = useSetRecoilState(cartState);
 
   useEffect(() => {
     let timeoutId: NodeJS.Timeout;
@@ -47,9 +39,12 @@ const Product: React.FC<ProductProps> = ({ id, src, title, price, inCart }) => {
     newProducts.forEach((product) => {
       if (product.id === id) {
         product.inCart = true;
+        setCart((prevCart) => [
+          ...prevCart,
+          { product: { ...product }, quantity: 1 },
+        ]);
       }
     });
-    console.log(newProducts);
     setProducts(newProducts);
   };
 

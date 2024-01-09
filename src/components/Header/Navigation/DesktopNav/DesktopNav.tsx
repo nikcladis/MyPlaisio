@@ -1,11 +1,12 @@
 import React from "react";
-import { GrMenu, GrCart } from "react-icons/gr";
+import { GrMenu } from "react-icons/gr";
 import { FaRegCircleUser } from "react-icons/fa6";
 import { FaRegHeart } from "react-icons/fa";
 import Logo from "../../../Logo/Logo";
 import Search from "../../Search/Search";
 import { useSetRecoilState } from "recoil";
 import { sidebarState } from "../../../../atoms/sidebarState";
+import CartPreview from "../CartPreview/CartPreview";
 
 const DesktopNav: React.FC = () => {
   const setSidebarState = useSetRecoilState(sidebarState);
@@ -32,7 +33,7 @@ const DesktopNav: React.FC = () => {
         <div className="flex items-center gap-4">
           <FaRegHeart fontSize={30} className="cursor-pointer" />
           <FaRegCircleUser fontSize={30} className="cursor-pointer" />
-          <GrCart fontSize={30} className="cursor-pointer" />
+          <CartPreview />
         </div>
       </nav>
     </>

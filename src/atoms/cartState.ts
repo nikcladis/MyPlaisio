@@ -2,8 +2,10 @@ import { atom } from "recoil";
 
 type Product = {
   id: number;
-  name: string;
+  src: string;
+  title: string;
   price: number;
+  inCart: boolean;
 };
 
 type CartItem = {
