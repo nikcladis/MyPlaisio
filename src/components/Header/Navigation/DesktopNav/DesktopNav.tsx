@@ -14,7 +14,7 @@ const DesktopNav: React.FC = () => {
     <>
       <nav className="bg-white flex p-4 justify-between items-center w-full">
         <div className="flex items-center gap-6">
-          <div>
+          <div className="cursor-pointer">
             <Logo width={220} />
           </div>
           <div className="flex items-center gap-3 mt-2">
@@ -23,15 +23,16 @@ const DesktopNav: React.FC = () => {
                 setSidebarState((prev) => ({ ...prev, isOpen: true }))
               }
               fontSize={30}
+              className="cursor-pointer"
             />
             <span className="font-semibold">Προϊόντα</span>
           </div>
         </div>
         <Search />
         <div className="flex items-center gap-4">
-          <FaRegHeart fontSize={30} />
-          <FaRegCircleUser fontSize={30} />
-          <GrCart fontSize={30} />
+          <FaRegHeart fontSize={30} className="cursor-pointer" />
+          <FaRegCircleUser fontSize={30} className="cursor-pointer" />
+          <GrCart fontSize={30} className="cursor-pointer" />
         </div>
       </nav>
     </>
