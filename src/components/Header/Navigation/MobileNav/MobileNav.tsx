@@ -4,6 +4,7 @@ import { FaRegCircleUser } from "react-icons/fa6";
 import Logo from "../../../Logo/Logo";
 import { useSetRecoilState } from "recoil";
 import { sidebarState } from "../../../../atoms/sidebarState";
+import CartPreview from "../CartPreview/CartPreview";
 
 const MobileNav: React.FC = () => {
   const setSidebarState = useSetRecoilState(sidebarState);
@@ -14,25 +15,16 @@ const MobileNav: React.FC = () => {
         <GrMenu
           onClick={() => setSidebarState((prev) => ({ ...prev, isOpen: true }))}
           fontSize={30}
-          className="cursor-pointer hover:text-purple-600 transition-color duration-300 ease"
+          className="cursor-pointer"
         />
-        <GrPhone
-          fontSize={25}
-          className="cursor-pointer hover:text-purple-600 transition-color duration-300 ease"
-        />
+        <GrPhone fontSize={25} className="cursor-pointer" />
       </div>
       <div className="self-center">
         <Logo width={130} />
       </div>
       <div className="flex self-end items-center gap-4">
-        <FaRegCircleUser
-          fontSize={25}
-          className="cursor-pointer hover:text-purple-600 transition-color duration-300 ease"
-        />
-        <GrCart
-          fontSize={25}
-          className="cursor-pointer hover:text-purple-600 transition-color duration-300 ease"
-        />
+        <FaRegCircleUser fontSize={25} className="cursor-pointer" />
+        <CartPreview />
       </div>
     </nav>
   );
