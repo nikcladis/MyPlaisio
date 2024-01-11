@@ -30,7 +30,10 @@ const Search: React.FC<SearchProps> = () => {
         }`}
       >
         {isSearching && (
-          <GrClose fontSize={22} className="absolute left-4 text-gray-500" />
+          <GrClose
+            fontSize={22}
+            className="absolute z-20 left-4 text-gray-500 cursor-pointer"
+          />
         )}
         {!isSearching && (
           <GrSearch fontSize={22} className="absolute left-4 text-gray-500" />
