@@ -77,14 +77,14 @@ const MobileFooter: React.FC<MobileFooterProps> = () => {
             <li>Καταστήματα</li>
           </ul>
         </div>
-        <div className="z-10 bg-blue-950 w-full py-2 flex ">
+        <div className="z-0 bg-blue-950 w-full py-2 flex ">
           <img
             src={plaisiopro}
             width={300}
             className="flex-1 bg-white bg-opacity-10 rounded-md p-4"
           />
         </div>
-        <div className="z-10 bg-blue-950 w-full flex justify-between items-center gap-2">
+        <div className="z-0 bg-blue-950 w-full flex justify-between items-center gap-2">
           <img
             src={blog}
             alt="blog"
