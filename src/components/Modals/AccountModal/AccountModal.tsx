@@ -1,20 +1,29 @@
 import React from "react";
 import { GrClose } from "react-icons/gr";
+import useModal from "../../../hooks/useModal";
 
-type AccountModalProps = {};
+const AccountModal: React.FC = () => {
+  const { modalState, closeModal } = useModal();
 
-const AccountModal: React.FC<AccountModalProps> = () => {
+  if (!modalState.isOpen) return null;
+
   return (
     <>
       {/* Overlay */}
-      <div className="fixed inset-0 bg-black opacity-50 z-10"></div>
+      <div
+        onClick={closeModal}
+        className="fixed inset-0 bg-black opacity-50 z-10"
+      />
 
       {/* Modal */}
       <dialog
         open
         className="z-10 fixed top-1/2 -translate-y-1/2 rounded-md max-w-[600px] w-[95%]"
       >
-        <GrClose className="absolute right-5 top-5 cursor-pointer" />
+        <GrClose
+          onClick={closeModal}
+          className="absolute right-5 top-5 cursor-pointer"
+        />
         <div className="flex flex-col max-h-[520px] overflow-y-auto mt-10 overflow-x-hidden">
           <h2 className="text-lg font-bold mb-4 mx-8">Δεν έχεις λογαριασμό;</h2>
           <p className="text-sm font-semibold mx-8">

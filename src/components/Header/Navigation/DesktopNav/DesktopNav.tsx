@@ -6,10 +6,12 @@ import Logo from "../../../Logo/Logo";
 import Search from "../../Search/Search";
 import { useSetRecoilState } from "recoil";
 import { sidebarState } from "../../../../atoms/sidebarState";
+import { accountModalState } from "../../../../atoms/accountModalState";
 import CartPreview from "../CartPreview/CartPreview";
 
 const DesktopNav: React.FC = () => {
   const setSidebarState = useSetRecoilState(sidebarState);
+  const setAccountModalState = useSetRecoilState(accountModalState);
 
   return (
     <>
@@ -32,7 +34,13 @@ const DesktopNav: React.FC = () => {
         <Search />
         <div className="flex items-center gap-4">
           <FaRegHeart fontSize={30} className="cursor-pointer" />
-          <FaRegCircleUser fontSize={30} className="cursor-pointer" />
+          <FaRegCircleUser
+            onClick={() =>
+              setAccountModalState((prev) => ({ ...prev, isOpen: true }))
+            }
+            fontSize={30}
+            className="cursor-pointer"
+          />
           <CartPreview />
         </div>
       </nav>
