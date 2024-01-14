@@ -5,7 +5,7 @@ type CartProps = {};
 
 const Cart: React.FC<CartProps> = () => {
   return (
-    <div className="flex flex-col items-center p-2">
+    <div className="flex flex-col items-center p-2 bg-gray-100">
       <CartList />
     </div>
   );

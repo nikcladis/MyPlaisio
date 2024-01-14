@@ -7,7 +7,7 @@ import AccountModal from "../../components/Modals/AccountModal/AccountModal";
 
 const RootLayout: React.FC = () => {
   return (
-    <>
+    <div>
       <Header />
       <main>
         <AccountModal />
@@ -15,7 +15,7 @@ const RootLayout: React.FC = () => {
         <Sidebar />
       </main>
       <Footer />
-    </>
+    </div>
   );
 };
 export default RootLayout;
