@@ -4,10 +4,12 @@ import { FaRegCircleUser } from "react-icons/fa6";
 import Logo from "../../../Logo/Logo";
 import { useSetRecoilState } from "recoil";
 import { sidebarState } from "../../../../atoms/sidebarState";
+import { accountModalState } from "../../../../atoms/accountModalState";
 import CartPreview from "../CartPreview/CartPreview";
 
 const MobileNav: React.FC = () => {
   const setSidebarState = useSetRecoilState(sidebarState);
+  const setAccountModalState = useSetRecoilState(accountModalState);
 
   return (
     <nav className="flex p-4 bg-white justify-between items-center gap-6">
@@ -23,7 +25,13 @@ const MobileNav: React.FC = () => {
         <Logo width={130} />
       </div>
       <div className="flex self-end items-center gap-4">
-        <FaRegCircleUser fontSize={25} className="cursor-pointer" />
+        <FaRegCircleUser
+          onClick={() =>
+            setAccountModalState((prev) => ({ ...prev, isOpen: true }))
+          }
+          fontSize={25}
+          className="cursor-pointer"
+        />
         <CartPreview />
       </div>
     </nav>
