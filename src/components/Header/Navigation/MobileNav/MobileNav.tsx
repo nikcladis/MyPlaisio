@@ -1,5 +1,6 @@
 import React from "react";
-import { GrMenu, GrPhone, GrCart } from "react-icons/gr";
+import { NavLink } from "react-router-dom";
+import { GrMenu, GrPhone } from "react-icons/gr";
 import { FaRegCircleUser } from "react-icons/fa6";
 import Logo from "../../../Logo/Logo";
 import { useSetRecoilState } from "recoil";
@@ -21,9 +22,11 @@ const MobileNav: React.FC = () => {
         />
         <GrPhone fontSize={25} className="cursor-pointer" />
       </div>
-      <div className="self-center">
-        <Logo width={130} />
-      </div>
+      <NavLink to="/">
+        <div className="self-center">
+          <Logo width={130} />
+        </div>
+      </NavLink>
       <div className="flex self-end items-center gap-4">
         <FaRegCircleUser
           onClick={() =>
@@ -32,7 +35,9 @@ const MobileNav: React.FC = () => {
           fontSize={25}
           className="cursor-pointer"
         />
-        <CartPreview />
+        <NavLink to="/Cart">
+          <CartPreview />
+        </NavLink>
       </div>
     </nav>
   );

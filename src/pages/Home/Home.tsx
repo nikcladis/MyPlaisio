@@ -6,11 +6,9 @@ type HomeProps = {};
 
 const Home: React.FC<HomeProps> = () => {
   return (
-    <div>
-      <div className="flex flex-col items-center">
-        <Slider />
-        <FeaturedProducts />
-      </div>
+    <div className="flex flex-col items-center">
+      <Slider />
+      <FeaturedProducts />
     </div>
   );
 };

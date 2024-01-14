@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 import { GrMenu } from "react-icons/gr";
 import { FaRegCircleUser } from "react-icons/fa6";
 import { FaRegHeart } from "react-icons/fa";
@@ -17,9 +18,11 @@ const DesktopNav: React.FC = () => {
     <>
       <nav className="bg-white flex p-4 justify-between items-center w-full">
         <div className="flex items-center gap-6">
-          <div className="cursor-pointer">
-            <Logo width={220} />
-          </div>
+          <NavLink to="/">
+            <div className="cursor-pointer">
+              <Logo width={220} />
+            </div>
+          </NavLink>
           <div className="flex items-center gap-3 mt-2">
             <GrMenu
               onClick={() =>
@@ -33,7 +36,9 @@ const DesktopNav: React.FC = () => {
         </div>
         <Search />
         <div className="flex items-center gap-4">
-          <FaRegHeart fontSize={30} className="cursor-pointer" />
+          <NavLink to="/Wishlist">
+            <FaRegHeart fontSize={30} className="cursor-pointer" />
+          </NavLink>
           <FaRegCircleUser
             onClick={() =>
               setAccountModalState((prev) => ({ ...prev, isOpen: true }))
@@ -41,7 +46,9 @@ const DesktopNav: React.FC = () => {
             fontSize={30}
             className="cursor-pointer"
           />
-          <CartPreview />
+          <NavLink to="/Cart">
+            <CartPreview />
+          </NavLink>
         </div>
       </nav>
     </>
